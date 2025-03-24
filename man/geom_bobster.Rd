@@ -74,11 +74,11 @@ The geom is used to add Bobster to plots. See ?ggplot2::geom_points for more inf
 library(ggplot2)
 
 ggplot(mtcars) +
- geom_bobster(aes(mpg, wt), bobster = "bobster") +
+ geom_bobster(aes(mpg, wt), bobster = "bobster_default") +
  theme_bw()
 
 ggplot(mtcars) +
- geom_bobster(aes(mpg, wt), bobster = "bobster") +
+ geom_bobster(aes(mpg, wt), bobster = "bobster_default") +
  theme_bw()
 
 }

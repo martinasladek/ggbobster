@@ -14,8 +14,14 @@ draw_key_bobster <-  function(data, params, size) {
 }
 
 # bobsterGrob
-bobsterGrob <- function(x, y, size, bobster = "bobster", geom_key = list(bobster = "bobster.png",
-                                                                       bobster_face = "bobster_face.png")
+bobsterGrob <- function(x, y, size, bobster = "bobster_default", geom_key = list(
+                                                                         bobster_default = "bobster_default.png",
+                                                                         bobster_pale =    "bobster_pale.png",
+                                                                         bobster_baby =    "bobster_baby.png",
+                                                                         bobster_crochet = "bobster_crochet.png",
+                                                                         bobster_friends = "bobster_friends.png",
+                                                                         bobster_face =    "bobster_face.png"
+                                                                         )
                         ) {
 
   filename <- system.file(geom_key[[unique(bobster)]], package = "ggbobster", mustWork = TRUE)
@@ -35,12 +41,12 @@ GeomBobster <- ggplot2::ggproto(`_class` = "GeomBobster",
                                `_inherit` = ggplot2::Geom,
                                required_aes = c("x", "y"),
                                non_missing_aes = c("size", "bobster"),
-                               default_aes = ggplot2::aes(size = 1, bobster = "bobster", shape  = 19,
+                               default_aes = ggplot2::aes(size = 1, bobster = "bobster_default", shape  = 19,
                                                           colour = "black",   fill   = NA,
                                                           alpha  = NA,
                                                           stroke =  0.5,
                                                           scale = 5,
-                                                          image_filename = "bobster"),
+                                                          image_filename = "bobster_default"),
 
                                draw_panel = function(data, panel_scales, coord, na.rm = FALSE) {
                                  coords <- coord$transform(data, panel_scales)
@@ -62,11 +68,11 @@ GeomBobster <- ggplot2::ggproto(`_class` = "GeomBobster",
 #'library(ggplot2)
 #'
 #' ggplot(mtcars) +
-#'  geom_bobster(aes(mpg, wt), bobster = "bobster") +
+#'  geom_bobster(aes(mpg, wt), bobster = "bobster_default") +
 #'  theme_bw()
 #'
 #' ggplot(mtcars) +
-#'  geom_bobster(aes(mpg, wt), bobster = "bobster") +
+#'  geom_bobster(aes(mpg, wt), bobster = "bobster_default") +
 #'  theme_bw()
 #'
 #' @importFrom grDevices as.raster
