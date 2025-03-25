@@ -6,7 +6,7 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-A ggplot2 geom for adding Blobster.
+A ggplot2 geom for adding Bobster.
 
 ## Installation
 
@@ -53,7 +53,7 @@ df |>
 
 ## Classic Bobster
 
-This is a basic example which shows you how to solve a common problem:
+Default Bobster setting:
 
 ``` r
 mtcars |> 
